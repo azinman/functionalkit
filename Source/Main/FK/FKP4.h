@@ -5,10 +5,10 @@
 #define pair4(a, b, c, d) [FKP4 p4With_1:a _2:b _3:c _4:d]
 
 @interface FKP4 : NSObject <NSCopying> {
-    id _1;
-    id _2;
-    id _3;
-    id _4;
+    id __unsafe_unretained _1;
+    id __unsafe_unretained _2;
+    id __unsafe_unretained _3;
+    id __unsafe_unretained _4;
 }
 
 READ id _1;

@@ -4,7 +4,7 @@
 //TODO make this a singleton
 
 + (FKUnit *)unit {
-    return [[[FKUnit alloc] init] autorelease];
+    return [[FKUnit alloc] init];
 }
 
 #pragma mark NSObject methods.

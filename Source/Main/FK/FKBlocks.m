@@ -2,28 +2,28 @@
 
 @implementation F
 + (Function)compose:(Function)f1 :(Function)f2 {
-    return [[^(id arg) {
+    return [^(id arg) {
         return f1(f2(arg));
-    } copy] autorelease];
+    } copy];
 }
 
 + (Effect)comap:(Effect)e :(Function)f {
-    return [[^(id arg) {
+    return [^(id arg) {
         e(f(arg));
         return;
-    } copy] autorelease];
+    } copy];
 }
 
 + (Function)identity {
-    return [[^(id arg) {
+    return [^(id arg) {
         return arg;
-    } copy] autorelease];
+    } copy];
 }
 
 + (Function)const:(id)arg {
-    return [[^(id dontcare) {
+    return [^(id dontcare) {
         return arg;
-    } copy] autorelease];
+    } copy];
 }
 @end
 

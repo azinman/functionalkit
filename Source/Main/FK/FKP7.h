@@ -5,13 +5,13 @@
 #define pair7(a, b, c, d, e, f, g) [FKP7 p7With_1:a _2:b _3:c _4:d _5:e _6:f _7:g]
 
 @interface FKP7 : NSObject <NSCopying> {
-    id _1;
-    id _2;
-    id _3;
-    id _4;
-    id _5;
-    id _6;
-    id _7;
+    id __unsafe_unretained _1;
+    id __unsafe_unretained _2;
+    id __unsafe_unretained _3;
+    id __unsafe_unretained _4;
+    id __unsafe_unretained _5;
+    id __unsafe_unretained _6;
+    id __unsafe_unretained _7;
 }
 
 READ id _1;

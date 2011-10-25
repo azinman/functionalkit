@@ -5,8 +5,8 @@
 #define pair2(a, b) [FKP2 p2With_1:a _2:b]
 
 @interface FKP2 : NSObject <NSCopying> {
-    id _1;
-    id _2;
+    id __unsafe_unretained _1;
+    id __unsafe_unretained _2;
 }
 
 READ id _1;

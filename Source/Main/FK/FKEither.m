@@ -66,15 +66,11 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     return [NSString stringWithFormat:@"<%s either: %@>", class_getName([self class]), self.either];
 }
 
-- (void)dealloc {
-    [either release];
-    [super dealloc];
-}
 
 #pragma mark Private methods.
 - (FKLeftProjection *)initWithEither:(FKEither *)newEither {
     if (self = [super init]) {
-        either = [newEither retain];
+        either = newEither;
     }
     return self;
 }
@@ -130,15 +126,11 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     return [NSString stringWithFormat:@"<%s either: %@>", class_getName([self class]), self.either];
 }
 
-- (void)dealloc {
-    [either release];
-    [super dealloc];
-}
 
 #pragma mark Private methods.
 - (FKRightProjection *)initWithEither:(FKEither *)newEither {
     if (self = [super init]) {
-        either = [newEither retain];
+        either = newEither;
     }
     return self;
 }
@@ -151,11 +143,11 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 @synthesize isLeft;
 
 + (FKEither *)leftWithValue:(id)value {
-    return [[[FKEither alloc] initWithValue:value isLeft:YES] autorelease];
+    return [[FKEither alloc] initWithValue:value isLeft:YES];
 }
 
 + (FKEither *)rightWithValue:(id)value {
-    return [[[FKEither alloc] initWithValue:value isLeft:NO] autorelease];
+    return [[FKEither alloc] initWithValue:value isLeft:NO];
 }
 
 + (FKEither *)errorWithReason:(NSString *)reason {
@@ -182,11 +174,11 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 }
 
 - (FKLeftProjection *)left {
-    return [[[FKLeftProjection alloc] initWithEither:self] autorelease];
+    return [[FKLeftProjection alloc] initWithEither:self];
 }
 
 - (FKRightProjection *)right {
-    return [[[FKRightProjection alloc] initWithEither:self] autorelease];
+    return [[FKRightProjection alloc] initWithEither:self];
 }
 
 - (FKEither *)swap {
@@ -215,15 +207,11 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     return [NSString stringWithFormat:@"<%@ value: %@>", isLeft ? @"FKLeftProjection" : @"FKRightProjection", value];
 }
 
-- (void)dealloc {
-    [value release];
-    [super dealloc];
-}
 
 #pragma mark Private methods.
 - (FKEither *)initWithValue:(id)newValue isLeft:(BOOL)newIsLeft {
     if (self = [super init]) {
-        value = [newValue retain];
+        value = newValue;
         isLeft = newIsLeft;
     }
     return self;

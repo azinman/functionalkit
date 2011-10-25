@@ -6,22 +6,16 @@
 @synthesize _1, _2, _3;
 
 + (FKP3 *)p3With_1:(id)_1 _2:(id)_2 _3:(id)_3 {
-    return [[[FKP3 alloc] initWith_1:_1 _2:_2 _3:_3] autorelease];
+    return [[FKP3 alloc] initWith_1:_1 _2:_2 _3:_3];
 }
 
-- (void)dealloc {
-    [_1 release];
-    [_2 release];
-    [_3 release];
-    [super dealloc];
-}
 
 #pragma mark Private methods.
 - (id)initWith_1:(id)new_1 _2:(id)new_2 _3:(id)new_3 {
     if (self = [super init]) {
-        _1 = [new_1 retain];
-        _2 = [new_2 retain];
-        _3 = [new_3 retain];
+        _1 = new_1;
+        _2 = new_2;
+        _3 = new_3;
     }
     return self;
 }
@@ -46,6 +40,6 @@
 
 #pragma mark NSCopying
 - (id)copyWithZone:(NSZone *)zone {
-	return [self retain];
+	return self;
 }
 @end

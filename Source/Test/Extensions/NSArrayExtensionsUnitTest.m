@@ -93,7 +93,7 @@
 
 - (void)testCanUniquifyAnArray {
     NSArray *array = NSARRAY(@"A", @"B", @"C", @"C", @"A", @"A", @"B");
-    STAssertEqualObjects(NSARRAY(@"B", @"A", @"C"), [array unique], nil);
+    STAssertEqualObjects(NSARRAY(@"A", @"B", @"C"), [array unique], nil);
 }
 
 

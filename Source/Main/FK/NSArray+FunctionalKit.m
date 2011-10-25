@@ -24,7 +24,7 @@
         NSArray *array = arg;
         return (id)[array map:f];
     };
-    return [[lifted copy] autorelease];
+    return [lifted copy];
 }
 
 + (NSArray *)concat:(NSArray *)nested {
@@ -104,7 +104,7 @@
 }
 
 - (id)foldLeft:(id)acc f:(Function2)f {
-    id accC = [[acc copy] autorelease];
+    id accC = [acc copy];
     for (id item in self) {
         accC = f(accC,item);
     }
@@ -150,8 +150,7 @@
         [array addObject:item];
     }
     NSArray *copy = [array copy];
-    [array release];
-    return [copy autorelease];
+    return copy;
 }
 
 - (FKOption *)toOption {

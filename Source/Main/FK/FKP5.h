@@ -5,11 +5,11 @@
 #define pair5(a, b, c, d, e) [FKP5 p5With_1:a _2:b _3:c _4:d _5:e]
 
 @interface FKP5 : NSObject <NSCopying> {
-    id _1;
-    id _2;
-    id _3;
-    id _4;
-    id _5;
+    id __unsafe_unretained _1;
+    id __unsafe_unretained _2;
+    id __unsafe_unretained _3;
+    id __unsafe_unretained _4;
+    id __unsafe_unretained _5;
 }
 
 READ id _1;

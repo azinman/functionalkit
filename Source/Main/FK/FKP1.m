@@ -11,16 +11,11 @@
 
 @implementation SupplierP1
 
-- (void)dealloc {
-    [f release];
-    [argument release];
-    [super dealloc];
-}
 
 - (SupplierP1 *)initWithFunction:(Function)fu argument:(id)a {
     if ((self = [super init])) {
         f = [fu copy];
-        argument = [a retain];
+        argument = a;
     }
     
     return self;
@@ -37,23 +32,19 @@
 @synthesize _1;
 
 + (FKP1 *)supplierWithFunction:(Function)f argument:(id)arg {
-    return [[[SupplierP1 alloc] initWithFunction:f argument:arg] autorelease];
+    return [[SupplierP1 alloc] initWithFunction:f argument:arg];
 }
 
-- (void)dealloc {
-    [_1 release];
-    [super dealloc];
-}
 
 - (id)initWith_1:(id)new_1 {
     if (self = [super init]) {
-        _1 = [new_1 retain];
+        _1 = new_1;
     }
     return self;
 }
 
 + (FKP1 *)p1With_1:(id)_1 {
-    return [[[FKP1 alloc] initWith_1:_1] autorelease];
+    return [[FKP1 alloc] initWith_1:_1];
 }
 
 - (NSString *)description {
@@ -76,6 +67,6 @@
 
 #pragma mark NSCopying
 - (id)copyWithZone:(NSZone *)zone {
-	return [self retain];
+	return self;
 }
 @end

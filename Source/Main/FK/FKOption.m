@@ -27,10 +27,6 @@
     return someObject;
 }
 
-- (void) dealloc {
-    [someObject release];
-    [super dealloc];
-}
 
 #pragma mark NSObject methods.
 - (BOOL)isEqual:(id)object {
@@ -48,7 +44,7 @@
 #pragma mark Private methods.
 - (FKSome *)initWithSome:(id)newSomeObject {
     if ((self = [super init])) {
-        someObject = [newSomeObject retain];
+        someObject = newSomeObject;
     }
     return self;
 }
@@ -67,11 +63,11 @@
 }
 
 + (FKOption *)none {
-    return [[[FKNone alloc] init] autorelease];
+    return [[FKNone alloc] init];
 }
 
 + (FKOption *)some:(id)someObject {
-    return [[[FKSome alloc] initWithSome:someObject] autorelease];
+    return [[FKSome alloc] initWithSome:someObject];
 }
 
 // TODO Replace this implementation with filter.

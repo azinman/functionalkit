@@ -5,9 +5,9 @@
 #define pair3(a, b, c) [FKP3 p3With_1:a _2:b _3:c]
 
 @interface FKP3 : NSObject <NSCopying> {
-    id _1;
-    id _2;
-    id _3;
+    id __unsafe_unretained _1;
+    id __unsafe_unretained _2;
+    id __unsafe_unretained _3;
 }
 
 READ id _1;
