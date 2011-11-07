@@ -1,5 +1,7 @@
-#import "FK/FKEither.h"
-#import "FK/FKOption.h"
+//#import "FK/FKEither.h"
+//#import "FK/FKOption.h"
+#import "FKEither.h"
+#import "FKOption.h"
 
 NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 

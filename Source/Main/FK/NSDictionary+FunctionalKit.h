@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "FK/FKOption.h"
+//#import "FK/FKOption.h"
+#import "FKOption.h"
 
 @interface NSDictionary (FunctionalKitExtensions)
 
