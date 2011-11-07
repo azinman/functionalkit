@@ -114,7 +114,8 @@
 - (NSArray *)map:(Function)f {
 	NSMutableArray *r = [NSMutableArray arrayWithCapacity:[self count]];
 	for (id item in self) {
-		[r addObject:f(item)];
+    id result = f(item);
+    if (result) [r addObject:result];
 	}
 	return [NSArray arrayWithArray:r];
 }
